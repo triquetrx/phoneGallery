@@ -1,0 +1,21 @@
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.6.1/js/bootstrap.min.js"></script>
+     <script>
+        if(window.location.pathname.includes("index")){
+            document.getElementById("home").className="nav-item active";
+            document.getElementById("cart").className="nav-item";
+            document.getElementById("contact-form").className="nav-item";
+        }
+        if(window.location.pathname.includes("cart")){
+            document.getElementById("home").className="nav-item";
+            document.getElementById("cart").className="nav-item active";
+            document.getElementById("contact-form").className="nav-item";
+        }
+        if(window.location.pathname.includes("contact-form")){
+            document.getElementById("home").className="nav-item";
+            document.getElementById("cart").className="nav-item";
+            document.getElementById("contact-form").className="nav-item active";
+        }
+    </script>
+</body>
+</html>
