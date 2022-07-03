@@ -11,7 +11,7 @@
             document.getElementById("cart").className="nav-item active";
             document.getElementById("contact-form").className="nav-item";
         }
-        if(window.location.pathname.includes("contact-form")){
+        if(window.location.pathname.includes("contact")){
             document.getElementById("home").className="nav-item";
             document.getElementById("cart").className="nav-item";
             document.getElementById("contact-form").className="nav-item active";

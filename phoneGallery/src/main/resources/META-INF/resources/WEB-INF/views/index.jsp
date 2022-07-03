@@ -1,7 +1,7 @@
-<%@ include file="head.jspf"%>
-<%@ include file="navBar.jspf"%>
+<%@ include file="commons/head.jspf"%>
+<%@ include file="commons/navBar.jspf"%>
 <div class="container">
 	<h1>Welcome techy</h1>
 
 </div>
-<%@include file="end.jspf"%>
+<%@include file="commons/end.jspf"%>

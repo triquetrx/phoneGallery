@@ -16,8 +16,8 @@ public class ContactService {
 
 
 	// add new people
-	public void addNewContact(String name,String phoneno, String email) {
-		contactList.add(new ContactDetails(name,phoneno,new Date(),email));
+	public void addNewContact(String name,String phoneno, String email, boolean updates,String desc) {
+		contactList.add(new ContactDetails(name,phoneno,new Date(),email,updates,desc));
 	}
 
 
