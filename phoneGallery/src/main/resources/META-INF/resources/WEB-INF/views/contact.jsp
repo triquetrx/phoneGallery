@@ -36,7 +36,7 @@
 			<form:label class="form-check-label" path="updates" for="updates">I want to receive updates on new product release</form:label>
 		</div>
 		<br/>
-		<form:button class="btn btn-primary">Submit</form:button>
+		<form:button class="btn btn-primary" id="btn">Submit</form:button>
 	</form:form>
 </div>
 <%@include file="commons/end.jspf"%>

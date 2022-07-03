@@ -1,0 +1,35 @@
+body{
+    background-color: #EEEEEE;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+#navbar{
+    background-color: #0D0A0B;
+}
+
+#navbar a{
+    color: #EEEEEE;
+    border-bottom: solid 1px #0D0A0B;
+}
+
+#active{
+    color: #AD2831;
+}
+
+#navbar ul li a:hover{
+    border-bottom: solid 1px #EEEEEE;
+    transition: 0.5s;
+}
+
+.active{
+    color: #AD2831;
+}
+
+#brand{
+    user-select: none;
+}
+
+#brand{
+    user-select: none;
+}
