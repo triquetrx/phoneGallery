@@ -10,8 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.triquetrx.phoneGallery.bean.ContactDetails;
+import com.triquetrx.phoneGallery.service.CartService;
 import com.triquetrx.phoneGallery.service.ContactService;
 
 @Controller
@@ -41,10 +43,5 @@ public class ContactPageController {
 		log.info(contactService.toString());
 		isSuccess = true;
 		return "redirect:contact";
-	}
-
-	@RequestMapping(value = "/success")
-	private String successPage() {
-		return "success";
 	}
 }

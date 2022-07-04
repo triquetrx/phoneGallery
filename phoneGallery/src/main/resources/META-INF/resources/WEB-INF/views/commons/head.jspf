@@ -15,5 +15,27 @@
 	rel="stylesheet">
 <title>PhoneGallery</title>
 <link rel="stylesheet" href="/css/style.css">
+<style>
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+#card {
+	border: none;
+	border-radius: 25px;
+	background: linear-gradient(145deg, #ffffff, #e6e6e6);
+	box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+	margin:1.2rem
+}
+
+.btn-primary {
+	backgrounf-color: #fff;
+}
+</style>
 </head>
-<body style="scrollbar-width: none">
+<body>

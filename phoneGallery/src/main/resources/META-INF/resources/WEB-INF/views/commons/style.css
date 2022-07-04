@@ -33,3 +33,17 @@ body{
 #brand{
     user-select: none;
 }
+
+.footer{
+    font-weight: bolder;
+    background-color: #0D0A0B;
+    padding: 10px;
+    color: #EEEEEE;
+}
+
+#card{
+	border-radius: 21px;
+background: linear-gradient(145deg, #f0f0f0, #cacaca);
+box-shadow:  5px 5px 10px #bebebe,
+             -5px -5px 10px #ffffff;
+}
