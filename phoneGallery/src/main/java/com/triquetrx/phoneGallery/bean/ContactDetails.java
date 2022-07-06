@@ -2,26 +2,37 @@ package com.triquetrx.phoneGallery.bean;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+@Entity
+@Table(name = "customer")
 public class ContactDetails {
+	@Id
+	private int id;
+	@Column(name = "cust_name")
 	@NotNull(message = "Name can not be blank")
 	@Pattern(regexp = "[A-Za-z ]{3,}",message = "Name should only contain alphabets and should of minimum 3 characters")
 	private String name;
+	@Column(name="phoneno")
 	@NotNull
 	@Pattern(regexp = "[0-9]{10}", message="Phone number should have only digits and should be exactly 10")
 	private String phoneno;
+	@Column(name="added_date")
 	private Date date;
+	@Column(name="email")
 	@Email(message = "Email is not valid", regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])")
 	@NotEmpty(message = "Email cannot be empty")
 	private String email;
 	private boolean updates;
-	@NotBlank
+	@Column(name="issue")
 	@Size(min = 3,message="It should of minimum 3 characters")
 	private String desc;
 	
@@ -30,13 +41,22 @@ public class ContactDetails {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContactDetails(String name, String phoneno, Date date, String email, boolean updates, String desc) {
+	public ContactDetails(int id,String name, String phoneno, Date date, String email, boolean updates, String desc) {
 		super();
+		this.id=id;
 		this.name = name;
 		this.phoneno = phoneno;
 		this.date = date;
 		this.email = email;
 		this.updates = updates;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

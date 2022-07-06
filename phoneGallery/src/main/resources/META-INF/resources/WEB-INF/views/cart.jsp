@@ -51,10 +51,39 @@
 					Total
 				</h4>
 				<h4 class="col-4 d-flex justify-content-end font-weight-bolder">				
-				  &#8377;${(Math.round(total*100))/100}
+				  &#8377;${(Math.round((total)*100))/100}
 				</h4>
 			</div>
 		</div>
+		<c:if test="${cartList.size()>=3}">
+			<div class="container">
+				<div class="text-secondary font-italic row">
+					<h4 class="col-md-8 col">
+						Discount
+					</h4>
+					<h4 class="col-4 d-flex justify-content-end font-weight-bolder">				
+					  &#8377;${total*0.05}
+					</h4>
+				</div>
+			</div>
+			<div class="container">
+			<div class="text-secondary font-italic row">
+				<h4 class="col-md-8 col">
+					Discounted Price
+				</h4>
+				<c:if test="${cartList.size()<3}">
+					<h4 class="col-4 d-flex justify-content-end font-weight-bolder">				
+					  &#8377;${(Math.round((total)*100))/100}
+					</h4>
+				</c:if>
+				<c:if test="${cartList.size()>=3}">
+				<h4 class="col-4 d-flex justify-content-end font-weight-bolder">				
+				  &#8377;${(Math.round((total-(total*0.05))*100))/100}
+				</h4>
+				</c:if>
+			</div>
+		</div>
+		</c:if>
 	</c:if>
 </div>
 
