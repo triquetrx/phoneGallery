@@ -33,6 +33,10 @@ body::-webkit-scrollbar {
 	margin:1.2rem
 }
 
+input{
+	border:none;
+}
+
 .btn-primary {
 	backgrounf-color: #fff;
 }

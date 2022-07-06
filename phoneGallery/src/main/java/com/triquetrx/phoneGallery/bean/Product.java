@@ -1,18 +1,38 @@
 package com.triquetrx.phoneGallery.bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "product")
 public class Product {
+	@Id
 	private int id;
+	@Column(name = "name")
+	@NotEmpty(message = "Product Name can not be empty")
 	private String productName;
+	@Column(name = "product_type")
 	private String productType;
+	@Column(name = "description")
+	@NotEmpty(message = "Description can not be empty")
+	@Size(min = 4, max = 100, message = "Description should be less than 100 and more than 4")
 	private String desc;
+	@NotNull(message = "Price can not be empty")
 	private double price;
+	@Column(name = "image_url")
+	@NotNull(message = "Please don't leave url empty")
 	private String imageUrl;
 
 	public Product() {
 		super();
 	}
 
-	public Product(int id, String productName, String productType, String desc, double price,String imageUrl) {
+	public Product(int id, String productName, String productType, String desc, double price, String imageUrl) {
 		super();
 		this.id = id;
 		this.productName = productName;
@@ -62,11 +82,11 @@ public class Product {
 		this.price = price;
 	}
 
-	public String getUrl() {
+	public String getImageUrl() {
 		return imageUrl;
 	}
 
-	public void setUrl(String url) {
+	public void setImageUrl(String url) {
 		this.imageUrl = url;
 	}
 

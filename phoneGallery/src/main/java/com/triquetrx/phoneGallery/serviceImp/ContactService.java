@@ -1,4 +1,4 @@
-package com.triquetrx.phoneGallery.service;
+package com.triquetrx.phoneGallery.serviceImp;
 
 import java.util.ArrayList;
 import java.util.Date;
