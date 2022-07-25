@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
@@ -16,6 +18,7 @@ import javax.validation.constraints.Size;
 @Table(name = "customer")
 public class ContactDetails {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "cust_name")
 	@NotNull(message = "Name can not be blank")
@@ -41,14 +44,14 @@ public class ContactDetails {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContactDetails(int id,String name, String phoneno, Date date, String email, boolean updates, String desc) {
+	public ContactDetails(String name, String phoneno, Date date, String email, boolean updates, String desc) {
 		super();
-		this.id=id;
 		this.name = name;
 		this.phoneno = phoneno;
 		this.date = date;
 		this.email = email;
 		this.updates = updates;
+		this.desc = desc;
 	}
 
 	public int getId() {

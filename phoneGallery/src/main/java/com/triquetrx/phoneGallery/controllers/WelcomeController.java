@@ -1,7 +1,5 @@
 package com.triquetrx.phoneGallery.controllers;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.triquetrx.phoneGallery.bean.Product;
-import com.triquetrx.phoneGallery.serviceImp.AddProductServices;
 import com.triquetrx.phoneGallery.serviceImp.AlertServices;
 import com.triquetrx.phoneGallery.serviceImp.ProductService;
 
@@ -26,8 +23,6 @@ public class WelcomeController {
 	private ProductService products;
 	@Autowired
 	private AlertServices alert;
-	@Autowired
-	private AddProductServices productList;
 
 	@RequestMapping(value = { "", "welcome", "index" })
 	public String welcomePage(ModelMap model) {
@@ -40,6 +35,7 @@ public class WelcomeController {
 	@RequestMapping(value = "admin-add-product", method = RequestMethod.GET)
 	public String addNewProductPage(ModelMap map) {
 		map.put("product", new Product());
+		map.put("productList", products.getTypesList());
 		map.put("isProductAdded", alert.isProductAdded());
 		return "add-products";
 	}
@@ -56,11 +52,6 @@ public class WelcomeController {
 		Logger log = LoggerFactory.getLogger(getClass());
 		log.info(this.products.toString());
 		return "redirect:admin-add-product";
-	}
-	
-	@ModelAttribute("productList")
-	public List<String> productList(){
-		return productList.getTypesList();
 	}
 
 }

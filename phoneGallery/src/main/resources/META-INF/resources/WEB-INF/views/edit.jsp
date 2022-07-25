@@ -11,6 +11,7 @@
 		</div>
 	</c:if>
 	<form:form method="POST" modelAttribute="product">
+		<form:hidden path="id"/>
 		<div class="form-group">
 			<form:label path="productName">Product Name</form:label>
 			<form:input cssClass="form-control" path="productName" />
@@ -38,7 +39,7 @@
 			<form:errors cssClass="text-warning" path="imageUrl" />
 		</div>
 		<br />
-		<form:button class="btn btn-primary">Add Product</form:button>
+		<form:button class="btn btn-primary">Update Product</form:button>
 	</form:form>
 </div>
 <%@include file="commons/footer.jspf"%>

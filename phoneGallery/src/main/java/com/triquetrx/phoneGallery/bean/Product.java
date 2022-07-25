@@ -2,6 +2,8 @@ package com.triquetrx.phoneGallery.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
@@ -12,6 +14,7 @@ import javax.validation.constraints.Size;
 @Table(name = "product")
 public class Product {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "name")
 	@NotEmpty(message = "Product Name can not be empty")
@@ -32,9 +35,8 @@ public class Product {
 		super();
 	}
 
-	public Product(int id, String productName, String productType, String desc, double price, String imageUrl) {
+	public Product(String productName, String productType, String desc, double price, String imageUrl) {
 		super();
-		this.id = id;
 		this.productName = productName;
 		this.productType = productType;
 		this.desc = desc;

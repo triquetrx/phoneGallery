@@ -31,7 +31,7 @@ public class CustomLoginHandler implements AuthenticationSuccessHandler{
 		for(GrantedAuthority auth:authorities) {
 			log.info(auth.getAuthority());
 			if(auth.getAuthority().equals("ROLE_ADMIN")) {
-				url = "/admin-add-product";
+				url = "/index-admin";
 			} else if(auth.getAuthority().equals("ROLE_USER")) {
 				url = "/";
 			}

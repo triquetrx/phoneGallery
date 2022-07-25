@@ -40,5 +40,12 @@ public class LoginService implements UserDetailsService{
 	public PasswordEncoder encoder() {
 		return new BCryptPasswordEncoder();
 	}
+
+	public void createNewAdmin(String username, String firstName,String lastName,String password) throws Exception {
+		if(login.existsByUsername(username)) {
+			throw new ResponseStatusException(HttpStatus.CONFLICT, "Username exists");
+		}
+		login.save(new UserLogin(username,firstName,lastName,encoder().encode(password),"ROLE_ADMIN",true));
+	}
 	
 }
