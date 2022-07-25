@@ -29,7 +29,7 @@
 						</h5>
 						<p class="card-text text-secondary" style="height: 5rem;">${productList.getProducts().get(count).desc}</p>
 						<div class="row">
-							<a href="/addToCart?id=${count+1}" type="submit"
+							<a href="/addToCart?id=${productList.getProducts().get(count).getId()}" type="submit"
 								class="btn btn-primary col" style="margin: 0.33rem">Add to cart
 								</a> 
 								<a

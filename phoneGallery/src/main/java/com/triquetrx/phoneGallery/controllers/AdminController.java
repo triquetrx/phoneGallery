@@ -28,11 +28,13 @@ public class AdminController {
 
 	@Autowired
 	private ProductService products;
+	
+	private boolean isDeleted=false;
 
 	@RequestMapping(value = { "index-admin" })
 	public String welcomePageAdmin(ModelMap model) {
 		model.put("productList", products);
-		model.put("isDeleted", false);
+		model.put("isDeleted", isDeleted);
 		model.addAttribute("product", new Product());
 		return "index-admin";
 	}
@@ -87,6 +89,7 @@ public class AdminController {
 
 	@RequestMapping("/delete")
 	public String delete(@RequestParam("id") int id, ModelMap model) {
+		isDeleted = true;
 		products.deleteProduct(id);
 		return "redirect:index-admin";
 	}

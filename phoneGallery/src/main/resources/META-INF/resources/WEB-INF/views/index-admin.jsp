@@ -4,7 +4,7 @@
 <div class="container">
 	<c:if test="${isDeleted}">
 		<div class="alert alert-success alert-dismissible fade show" role="alert">
-			Added a product to the cart
+			Successfully, deleted a product
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     			<span aria-hidden="true">&times;</span>
   			</button>
@@ -29,11 +29,11 @@
 						</h5>
 						<p class="card-text text-secondary" style="height: 5rem;">${productList.getProducts().get(count).desc}</p>
 						<div class="row">
-							<a href="/edit?id=${count+1}" type="submit"
+							<a href="/edit?id=${productList.getProducts().get(count).getId()}" type="submit"
 								class="btn btn-primary col" style="margin: 0.33rem">Edit
 								</a> 
 								<a
-								href="/delete?id=${count+1}"
+								href="/delete?id=${productList.getProducts().get(count).getId()}"
 								class="btn btn-primary col"
 								style="background-color: #AD2831; border-color: #AD2831; margin: 0.33rem">Delete</a>
 						</div>

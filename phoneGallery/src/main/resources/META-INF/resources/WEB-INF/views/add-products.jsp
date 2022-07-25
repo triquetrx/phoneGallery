@@ -7,7 +7,7 @@
 	<br />
 	<c:if test="${isProductAdded}">
 		<div class="alert alert-success" role="alert">
-			Added new product successfully <a href="/index">Click here to check it out</a>
+			Added new product successfully <a href="/index-admin">Click here to check it out</a>
 		</div>
 	</c:if>
 	<form:form method="POST" modelAttribute="product">
